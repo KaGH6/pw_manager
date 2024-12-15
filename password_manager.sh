@@ -28,7 +28,7 @@ read -s -p "パスワードを入力してください：" password
 password="${password:?パスワードを設定してください。}"
 
 # 複合化したデータを一時ファイルに保存
-# 標準エラー出力(2)を/dev/nullにすてる。つまり、エラーメッセージを表示しない。
+# 標準エラー出力(2)を/dev/nullにすてる。(=エラーメッセージを表示しない)
 gpg -d password.gpg > password.txt 2> /dev/null
 # パスワードをpassword.txtに書き込む
 echo "$serviceName:$userName:$password" >> password.txt
